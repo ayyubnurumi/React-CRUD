@@ -1,8 +1,8 @@
-import "./App.css";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
 import { Create } from "./components/create";
 import { Read } from "./components/read";
 import { Update } from "./components/update";
+import "./App.css";
 
 const LayOut = () => {
   return (
@@ -27,8 +27,9 @@ function App() {
       <Routes>
         <Route path="/" element={<LayOut />}>
           <Route path="/create" element={<Create />} />
-          <Route path="/read" element={<Read />} />
+          <Route index path="/read" element={<Read />} />
           <Route path="/update" element={<Update />} />
+          <Route path="/" element={<Navigate to="/read" />} replace />
         </Route>
       </Routes>
     </BrowserRouter>

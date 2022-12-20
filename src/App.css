@@ -1,11 +1,48 @@
 div.App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   background-color: #282c34;
   color: whitesmoke;
-  flex-direction: column;
+}
+
+.App-header {
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.App-header h1,
+.App-header ul li {
+  line-height: 80px;
+  float: left;
+}
+
+.App-header h1 {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.App-header ul {
+  list-style: none;
+  margin: 0;
+}
+
+.App-header ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.App-header ul li a {
+  color: whitesmoke;
+  font-size: large;
+  width: 50px;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+
+.App-header ul li a:hover {
+  border-top: 2px solid whitesmoke;
+  border-bottom: 2px solid whitesmoke;
 }
 
 div.App main {
@@ -14,18 +51,11 @@ div.App main {
   padding: 4%;
 }
 
-div.App-header {
-  display: flex;
-  box-sizing: border-box;
-  height: 300px;
+.create-form {
+  width: max(50%, 500px);
 }
 
-div.App-header ul {
-  display: flex;
-  flex-direction: row;
-}
-
-.create-form label{
+.create-form label {
   color: whitesmoke !important;
   font-size: 12px !important;
 }
