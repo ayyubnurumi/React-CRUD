@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TutorialDataService from "../services/TutorialService";
+import "../App.css";
 
 export const AddTutorial = () => {
   const initialTutorialState = {
