@@ -1,22 +1,27 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, Link } from "react-router-dom";
+
+// pages crud 1
 import { Create } from "./components-crud1/create";
 import { Read } from "./components-crud1/read";
 import { Update } from "./components-crud1/update";
-import "./App.css";
+// pages crud 2
 import { TutorialsList } from "./components-crud2/TutorialsList";
 import { AddTutorial } from "./components-crud2/AddTutorial";
 import { Tutorial } from "./components-crud2/Tutorial";
+// origin page
 import { Home } from "./Home";
 
+// styles
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
 function App() {
-  
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/tutorials" className="navbar-brand">
-          bezKoder
+        <a href="/" className="navbar-brand mx-5">
+          React CRUD Operations
         </a>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">

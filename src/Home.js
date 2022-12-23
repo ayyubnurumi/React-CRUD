@@ -25,7 +25,7 @@ export const Home = () => {
   return (
     <div className="flex-container">
       <div className="flex-item bg-one tilt">
-        <a href="-">
+        <a href="/read">
           <span>
             <img src={uni} alt="uni" />
           </span>
@@ -33,7 +33,7 @@ export const Home = () => {
         </a>
       </div>
       <div className="flex-item bg-two tilt">
-        <a href="-">
+        <a href="/tutorials">
           <span>
             <img src={uni} alt="corn" />
           </span>

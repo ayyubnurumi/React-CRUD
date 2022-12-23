@@ -41,11 +41,11 @@
   -webkit-box-direction: normal;
   flex-flow: row wrap;
   padding: 3em 1em;
-  background: #180148;
+  /* background: #180148; */
 }
 
 .flex-container .flex-item {
-  margin: 25px;
+  margin: auto;
   border-radius: 5px;
   padding: 4.5em 5em;
   position: relative;
