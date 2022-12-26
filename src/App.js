@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 // pages crud 1
 import { Create } from "./components-crud1/create";
@@ -9,50 +9,36 @@ import { Update } from "./components-crud1/update";
 import { TutorialsList } from "./components-crud2/TutorialsList";
 import { AddTutorial } from "./components-crud2/AddTutorial";
 import { Tutorial } from "./components-crud2/Tutorial";
-// home page
-import { Home } from "./Home";
+// main page
+import { Home } from "./main/Home";
+import Navbar from "./main/Navbar";
 
 // styles
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
+  const [navbar, setnavbar] = useState(0);
+  const setnavbar0 = () => setnavbar(0);
+  const setnavbar1 = () => setnavbar(1);
+  const setnavbar2 = () => setnavbar(2);
+  console.log(navbar);
   return (
-    <div>
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/" className="navbar-brand mx-5">
-          React CRUD Operations
-        </a>
-        <div className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link to={"/tutorials"} className="nav-link">
-              Tutorials
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={"/add"} className="nav-link">
-              Add
-            </Link>
-          </li>
-        </div>
-      </nav>
-
-      <div className="container mt-3">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navbar navbar={navbar} setnavbar={setnavbar0} />}>
+            <Route path="/" element={<Home setnavbar1={setnavbar1} setnavbar2={setnavbar2} />} />
 
-          {/* crud1 */}
-          <Route path="/create" element={<Create />} />
-          <Route path="/read" element={<Read />} />
-          <Route path="/update" element={<Update />} />
+            {/* crud1 */}
+            <Route path="/create" element={<Create />} />
+            <Route path="/read" element={<Read />} />
+            <Route path="/update" element={<Update />} />
 
-          {/* crud2 */}
-          <Route path="/tutorials" element={<TutorialsList />} />
-          <Route path="/add" element={<AddTutorial />} />
-          <Route path="/tutorials/:id" element={<Tutorial />} />
+            {/* crud2 */}
+            <Route path="/tutorials" element={<TutorialsList />} />
+            <Route path="/add" element={<AddTutorial />} />
+            <Route path="/tutorials/:id" element={<Tutorial />} />
+          </Route>
         </Routes>
-      </div>
-    </div>
   );
 }
 

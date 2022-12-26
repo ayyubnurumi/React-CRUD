@@ -1,9 +1,9 @@
 import React from "react";
-import "./App.css";
+import "../App.css";
 import uni from "./download.png";
 import VanillaTilt from "vanilla-tilt";
 
-export const Home = () => {
+export const Home = ({setnavbar1, setnavbar2}) => {
   const tilt = document.querySelectorAll(".tilt");
   VanillaTilt.init(tilt, {
     reverse: true,
@@ -24,7 +24,7 @@ export const Home = () => {
 
   return (
     <div className="flex-container">
-      <div className="flex-item bg-one tilt">
+      <div className="flex-item bg-one tilt" onClick={setnavbar1}>
         <a href="/read">
           <span>
             <img src={uni} alt="uni" />
@@ -32,14 +32,14 @@ export const Home = () => {
           <h1 className="text">crud1</h1>
         </a>
       </div>
-      <div className="flex-item bg-two tilt">
+      <div className="flex-item bg-two tilt" onClick={setnavbar2}>
         <a href="/tutorials">
           <span>
             <img src={uni} alt="corn" />
           </span>
           <h1 className="text">crud2</h1>
         </a>
-      </div>
+      </div> 
     </div>
   );
 };
