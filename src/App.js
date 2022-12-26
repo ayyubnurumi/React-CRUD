@@ -9,7 +9,7 @@ import { Update } from "./components-crud1/update";
 import { TutorialsList } from "./components-crud2/TutorialsList";
 import { AddTutorial } from "./components-crud2/AddTutorial";
 import { Tutorial } from "./components-crud2/Tutorial";
-// origin page
+// home page
 import { Home } from "./Home";
 
 // styles
@@ -39,10 +39,14 @@ function App() {
 
       <div className="container mt-3">
         <Routes>
+          <Route path="/" element={<Home />} />
+
+          {/* crud1 */}
           <Route path="/create" element={<Create />} />
           <Route path="/read" element={<Read />} />
           <Route path="/update" element={<Update />} />
-          <Route path="/" element={<Home />} />
+
+          {/* crud2 */}
           <Route path="/tutorials" element={<TutorialsList />} />
           <Route path="/add" element={<AddTutorial />} />
           <Route path="/tutorials/:id" element={<Tutorial />} />
