@@ -18,15 +18,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
-  const [navbar, setnavbar] = useState(0);
-  const setnavbar0 = () => setnavbar(0);
-  const setnavbar1 = () => setnavbar(1);
-  const setnavbar2 = () => setnavbar(2);
-  console.log(navbar);
+  const [navbar, setnavbar] = useState();
+  const setNavbarFromChild = (data) => {setnavbar(data)};
+
   return (
         <Routes>
-          <Route path="/" element={<Navbar navbar={navbar} setnavbar={setnavbar0} />}>
-            <Route path="/" element={<Home setnavbar1={setnavbar1} setnavbar2={setnavbar2} />} />
+          <Route path="/" element={<Navbar navbar={navbar} setnavbar={setNavbarFromChild} />}>
+            <Route path="/" element={<Home setnavbar1={setNavbarFromChild} setnavbar2={setNavbarFromChild} />} />
 
             {/* crud1 */}
             <Route path="/create" element={<Create />} />
