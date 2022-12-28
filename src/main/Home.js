@@ -3,7 +3,7 @@ import "../App.css";
 import uni from "./download.png";
 import VanillaTilt from "vanilla-tilt";
 
-export const Home = ({setnavbar1}, {setnavbar2}) => {
+export const Home = () => {
   const tilt = document.querySelectorAll(".tilt");
   VanillaTilt.init(tilt, {
     reverse: true,
@@ -24,7 +24,7 @@ export const Home = ({setnavbar1}, {setnavbar2}) => {
 
   return (
     <div className="flex-container">
-      <div className="flex-item bg-one tilt" onClick={()=> setnavbar1(1)}>
+      <div className="flex-item bg-one tilt" onClick={()=> localStorage.setItem('setnavbar', '1')}>
         <a href="/read">
           <span>
             <img src={uni} alt="uni" />
@@ -32,7 +32,7 @@ export const Home = ({setnavbar1}, {setnavbar2}) => {
           <h1 className="text">crud1</h1>
         </a>
       </div>
-      <div className="flex-item bg-two tilt" onClick={()=> setnavbar2(2)}>
+      <div className="flex-item bg-two tilt" onClick={()=> localStorage.setItem('setnavbar', '2')}>
         <a href="/tutorials">
           <span>
             <img src={uni} alt="corn" />

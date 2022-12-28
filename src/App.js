@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router";
 
 // pages crud 1
 import { Create } from "./components-crud1/create";
@@ -19,12 +19,14 @@ import "./App.css";
 
 function App() {
   const [navbar, setnavbar] = useState();
-  const setNavbarFromChild = (data) => {setnavbar(data)};
+  useEffect(() => {
+    setnavbar(JSON.parse(localStorage.getItem('setnavbar')))
+  }, []);
 
   return (
         <Routes>
-          <Route path="/" element={<Navbar navbar={navbar} setnavbar={setNavbarFromChild} />}>
-            <Route path="/" element={<Home setnavbar1={setNavbarFromChild} setnavbar2={setNavbarFromChild} />} />
+          <Route path="/" element={<Navbar navbar={navbar} />}>
+            <Route path="/" element={<Home />} />
 
             {/* crud1 */}
             <Route path="/create" element={<Create />} />
