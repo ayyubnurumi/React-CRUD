@@ -29,26 +29,9 @@ export const TutorialsList = () => {
       });
   };
 
-  const refreshList = () => {
-    retrieveTutorials();
-    setCurrentTutorial(null);
-    setCurrentIndex(-1);
-  };
-
   const setActiveTutorial = (tutorial, index) => {
     setCurrentTutorial(tutorial);
     setCurrentIndex(index);
-  };
-
-  const removeAllTutorials = () => {
-    TutorialDataService.removeAll()
-      .then(response => {
-        console.log(response.data);
-        refreshList();
-      })
-      .catch(e => {
-        console.log(e);
-      });
   };
 
   const findByTitle = () => {
@@ -73,15 +56,13 @@ export const TutorialsList = () => {
             value={searchTitle}
             onChange={onChangeSearchTitle}
           />
-          <div className="input-group-append">
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              onClick={findByTitle}
-            >
-              Search
-            </button>
-          </div>
+          <button
+            className="btn btn-secondary"
+            type="button"
+            onClick={findByTitle}
+          >
+            Search
+          </button>
         </div>
       </div>
       <div className="col-md-6">
@@ -101,13 +82,6 @@ export const TutorialsList = () => {
               </li>
             ))}
         </ul>
-
-        <button
-          className="m-3 btn btn-sm btn-danger"
-          onClick={removeAllTutorials}
-        >
-          Remove All
-        </button>
       </div>
       <div className="col-md-6">
         {currentTutorial ? (
@@ -134,7 +108,7 @@ export const TutorialsList = () => {
 
             <Link
               to={"/tutorials/" + currentTutorial.id}
-              className="badge badge-warning"
+              className="btn btn-warning"
             >
               Edit
             </Link>

@@ -82,7 +82,7 @@ export const Tutorial = (props) => {
         <div className="edit-form">
           <h4>Tutorial</h4>
           <form>
-            <div className="form-group">
+            <div className="form-group my-2">
               <label htmlFor="title">Title</label>
               <input
                 type="text"
@@ -93,7 +93,7 @@ export const Tutorial = (props) => {
                 onChange={handleInputChange}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group my-2">
               <label htmlFor="description">Description</label>
               <input
                 type="text"
@@ -105,7 +105,7 @@ export const Tutorial = (props) => {
               />
             </div>
 
-            <div className="form-group">
+            <div className="form-group my-2">
               <label>
                 <strong>Status:</strong>
               </label>
@@ -115,27 +115,27 @@ export const Tutorial = (props) => {
 
           {currentTutorial.published ? (
             <button
-              className="badge badge-primary mr-2"
+              className="btn btn-primary m-1"
               onClick={() => updatePublished(false)}
             >
               UnPublish
             </button>
           ) : (
             <button
-              className="badge badge-primary mr-2"
+              className="btn btn-primary m-1"
               onClick={() => updatePublished(true)}
             >
               Publish
             </button>
           )}
 
-          <button className="badge badge-danger mr-2" onClick={deleteTutorial}>
+          <button className="btn btn-danger m-1" onClick={deleteTutorial}>
             Delete
           </button>
 
           <button
             type="submit"
-            className="badge badge-success"
+            className="btn btn-success m-1"
             onClick={updateTutorial}
           >
             Update

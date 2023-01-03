@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import TutorialDataService from "../services/TutorialService";
 import "../App.css";
+import { useNavigate } from "react-router-dom";
 
 export const AddTutorial = () => {
+  const navigate = useNavigate();
   const initialTutorialState = {
     id: null,
     title: "",
@@ -49,13 +51,14 @@ export const AddTutorial = () => {
       {submitted ? (
         <div>
           <h4>You submitted successfully!</h4>
-          <button className="btn btn-success" onClick={newTutorial}>
-            Add
+          <button className="btn btn-success mx-3" onClick={newTutorial}>
+            Add more!
           </button>
+          <button className="btn btn-success" onClick={() => navigate('/tutorials')}>see all tutorials</button>
         </div>
       ) : (
         <div>
-          <div className="form-group">
+          <div className="form-group my-3">
             <label htmlFor="title">Title</label>
             <input
               type="text"
@@ -68,7 +71,7 @@ export const AddTutorial = () => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group my-3">
             <label htmlFor="description">Description</label>
             <input
               type="text"
