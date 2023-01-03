@@ -31,6 +31,7 @@
 
 .flex-container {
   height: 80vh;
+  width: 100%;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
@@ -41,13 +42,16 @@
   -webkit-box-direction: normal;
   flex-flow: row wrap;
   padding: 3em 1em;
-  /* background: #180148; */
+}
+
+.flex-item {
+  width: 20%;
 }
 
 .flex-container .flex-item {
   margin: auto;
   border-radius: 5px;
-  padding: 4.5em 5em;
+  padding: 3em;
   position: relative;
   min-height: 260px;
 }
@@ -69,7 +73,6 @@
   text-decoration: none;
   text-align: center;
   color: whitesmoke;
-  font: 24px normal;
   line-height: 1.5;
   -webkit-transition: 600ms ease;
   transition: 600ms ease;
@@ -105,12 +108,16 @@
 }
 
 .flex-item span > img {
-  width: 150px;
+  width: 80%;
 }
 
-.flex-item .text {
+.flex-item span > img.logo-text {
+  width: 10px;
+}
+
+.text {
   color: whitesmoke;
-  font: 12px 800 Courier;
+  font: 666 24px Courier;
   position: absolute;
   bottom: 20px;
 }

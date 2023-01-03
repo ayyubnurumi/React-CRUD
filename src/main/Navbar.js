@@ -41,7 +41,7 @@ function Navbar({navbar}) {
         ) : null)}
       </nav>
 
-      <div className="container mt-3">
+      <div className="container mt-5">
         <Outlet />
       </div>
     </div>
