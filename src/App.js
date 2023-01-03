@@ -20,7 +20,8 @@ import "./App.css";
 function App() {
   const [navbar, setnavbar] = useState();
   useEffect(() => {
-    setnavbar(JSON.parse(localStorage.getItem('setnavbar')))
+    setnavbar(JSON.parse(localStorage.getItem('setnavbar')));
+    localStorage.removeItem('setnavbar')
   }, []);
 
   return (

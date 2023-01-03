@@ -21,6 +21,7 @@ export const AddTutorial = () => {
     var data = {
       title: tutorial.title,
       description: tutorial.description,
+      published: tutorial.published
     };
 
     TutorialDataService.create(data)
