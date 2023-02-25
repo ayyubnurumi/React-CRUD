@@ -5,13 +5,17 @@ import { Link, Outlet } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 
-function Navbar({navbar}) {
+function Navbar({ navbar, resetNavbar }) {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/" onClick={()=> localStorage.setItem('setnavbar', '0')} className="navbar-brand mx-5">
+        <Link
+          to={"/"}
+          onClick={() => resetNavbar(0)}
+          className="navbar-brand mx-5"
+        >
           React CRUD Operations
-        </a>
+        </Link>
         {navbar === 1 ? (
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
@@ -25,7 +29,7 @@ function Navbar({navbar}) {
               </Link>
             </li>
           </div>
-        ) : (navbar === 2 ? (
+        ) : navbar === 2 ? (
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link to={"/tutorials"} className="nav-link">
@@ -38,7 +42,7 @@ function Navbar({navbar}) {
               </Link>
             </li>
           </div>
-        ) : null)}
+        ) : null}
       </nav>
 
       <div className="container mt-5">

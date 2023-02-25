@@ -3,8 +3,9 @@ import "../App.css";
 import uni from "./download.png";
 import fcc from "./fcc_primary_small.svg";
 import VanillaTilt from "vanilla-tilt";
+import { Link } from "react-router-dom";
 
-export const Home = () => {
+export const Home = ({ chooseNavbar }) => {
   const tilt = document.querySelectorAll(".tilt");
   VanillaTilt.init(tilt, {
     reverse: true,
@@ -25,21 +26,21 @@ export const Home = () => {
 
   return (
     <div className="flex-container">
-      <div className="flex-item bg-one tilt" onClick={()=> localStorage.setItem('setnavbar', '1')}>
-        <a href="/read">
+      <div className="flex-item bg-one tilt" >
+        <Link to={"/read"} onClick={()=> chooseNavbar(1)}>
           <span>
             <img src={fcc} alt="fcc-logo" />
           </span>
           <h1 className="text">FreeCodeCamp</h1>
-        </a>
+        </Link>
       </div>
-      <div className="flex-item bg-two tilt" onClick={()=> localStorage.setItem('setnavbar', '2')}>
-        <a href="/tutorials">
+      <div className="flex-item bg-two tilt" >
+        <Link to={"/tutorials"} onClick={()=> chooseNavbar(2)}>
           <span>
             <img src={uni} alt="corn" />
           </span>
           <h1 className="text">BezKoder</h1>
-        </a>
+        </Link>
       </div> 
     </div>
   );
