@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 import uni from "./download.png";
 import fcc from "./fcc_primary_small.svg";
 import VanillaTilt from "vanilla-tilt";
@@ -26,16 +25,16 @@ export const Home = ({ chooseNavbar }) => {
 
   return (
     <div className="flex-container">
-      <div className="flex-item bg-one tilt" >
-        <Link to={"/read"} onClick={()=> chooseNavbar(1)}>
+      <div className="flex-item bg-one tilt" onClick={()=> chooseNavbar(1)}>
+        <Link to={"/read"}>
           <span>
             <img src={fcc} alt="fcc-logo" />
           </span>
           <h1 className="text">FreeCodeCamp</h1>
         </Link>
       </div>
-      <div className="flex-item bg-two tilt" >
-        <Link to={"/tutorials"} onClick={()=> chooseNavbar(2)}>
+      <div className="flex-item bg-two tilt" onClick={()=> chooseNavbar(2)}>
+        <Link to={"/tutorials"}>
           <span>
             <img src={uni} alt="corn" />
           </span>

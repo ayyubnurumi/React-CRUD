@@ -3,11 +3,10 @@ import { Link, Outlet } from "react-router-dom";
 
 // styles
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
 
 function Navbar({ navbar, resetNavbar }) {
   return (
-    <div>
+    <>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <Link
           to={"/"}
@@ -48,7 +47,7 @@ function Navbar({ navbar, resetNavbar }) {
       <div className="container mt-5">
         <Outlet />
       </div>
-    </div>
+    </>
   );
 }
 

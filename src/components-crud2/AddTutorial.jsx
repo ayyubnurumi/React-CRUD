@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import TutorialDataService from "../services/TutorialService";
-import "../App.css";
 import { useNavigate } from "react-router-dom";
 
 export const AddTutorial = () => {

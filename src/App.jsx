@@ -15,7 +15,6 @@ import Navbar from "./main/Navbar";
 
 // styles
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
 
 function App() {
   const [navbar, setNavbar] = useState();
